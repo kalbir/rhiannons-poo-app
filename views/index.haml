@@ -1,0 +1,26 @@
+!!! 5
+
+%h1 What do you poo?
+
+%h2 What did you eat last night?
+
+- @foods = {:beans => 1, :bran => -1, :water => 0}
+
+%form{:name => "food1", :action => "poo.html", :method => "post"}
+  %select{:name => "food1"} 
+    = @foods.each do |item, i|
+      %option{:value => i}= item
+
+%form{:name => "food2", :action => "poo.html", :method => "post"}
+  %select{:name => "food2"} 
+    = @foods.each do |item, i|
+      %option{:value => i}= item
+
+%form{:name => "food3", :action => "poo.html", :method => "post"}
+  %select{:name => "food3"} 
+    = @foods.each do |item, i|
+      %option{:value => i}= item
+
+ 
+%input{:type => "submit", :value => "Let's find out"} 
+
