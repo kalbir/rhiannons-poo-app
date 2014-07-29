@@ -1,26 +1,41 @@
 !!! 5
+%head
+  <!--[if lt IE 8]> <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+  <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+  <!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+  <!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
-%h1 What do you poo?
+  %title Dr Rhiannon's Poo Predictor!
+  %link{:rel => "stylesheet", :href => "css/main.css", :type => "text/css"}
+  %link{:rel => "stylesheet", :href => "css/normalize.min.css", :type => "text/css"}
 
-%h2 What did you eat last night?
+%body
 
-- @foods = {:beans => 1, :bran => -1, :water => 0}
+  %div{:class=>"main-container"}
+    %div{:class=>"main wrapper clearfix"} 
 
-%form{:name => "food1", :action => "poo.html", :method => "post"}
-  %select{:name => "food1"} 
-    = @foods.each do |item, i|
-      %option{:value => i}= item
+      %h1 Dr Rhiannon's Poo Predictor!
 
-%form{:name => "food2", :action => "poo.html", :method => "post"}
-  %select{:name => "food2"} 
-    = @foods.each do |item, i|
-      %option{:value => i}= item
+      %img{:src=>"./images/rhi.jpg"}
 
-%form{:name => "food3", :action => "poo.html", :method => "post"}
-  %select{:name => "food3"} 
-    = @foods.each do |item, i|
-      %option{:value => i}= item
+      %h2 What did you eat last night?
+
+      - @foods = {:choose => 0, :beans => 1, :lentils => 1, :prunes => 1, :driedapricots => 1, :raisins => 1, :grapes => 1, :alcohol => 1,  :bran => 1, :banana => 0, :porridge => 0, :cheese => 0, :yoghurt => 0, :milk => 0,  :water => 0, :chicken => 0, :fish => 0, :steak => -1, :lamb => -1, :whitebread => -1, :brownbread =>-1, :pasta => -1, :rice => -1, :chocolate => 0, :cake => 0, :biscuits => 0, :sweets => 1, :potatoes => 0, :curry => 1, :roast => 0, :kebab => 0, :pizza => -1, :salad => -1, :soup => 0, :lasagne => -1, :cherries => 1}
+
+      %form{:name => "foodform", :action => "poo.html", :method => "post"}
+        %select{:name => "food1"} 
+          = @foods.each do |item, i|
+            %option{:value => i}= item
+
+        %select{:name => "food2"} 
+          = @foods.each do |item, i|
+            %option{:value => i}= item
+
+        %select{:name => "food3"} 
+          = @foods.each do |item, i|
+            %option{:value => i}= item
 
  
-%input{:type => "submit", :value => "Let's find out"} 
+        %input{:type => "submit", :value => "Let's find out"} 
 
+    %footer{:id=>"disclaimer"}DISCLAIMER: Although Dr Starks is an actual doctor (and a very good one at that) this website was created by people with no medical expertise. If you are suffering bowel problems we advise that you contact your GP or visit <a href="http://nhsdirect.gov.uk">NHS Direct.</a>

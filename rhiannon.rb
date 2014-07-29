@@ -8,23 +8,6 @@ haml :index
 
 end
 
-post '/' do
-
-
-
-end
-
-get '/poo.html' do
-
-"
-<h1>The answer is:</h2>
-
-
-<h2>Number 7!</h2>
-"
-
-end
-
 post '/poo.html' do
 
 @testvariable = params[:testtest]
@@ -35,7 +18,7 @@ post '/poo.html' do
 
 @poo_type = 4 + (@food1 + @food2 + @food3)
 
-redirect["/poo#{@poo_type}.html"] 
+redirect "/poo#{@poo_type}.html" 
  
 end
 
@@ -44,5 +27,44 @@ get "/poo1.html" do
 haml :poo1
 
 end
+
+get "/poo2.html" do
+
+haml :poo2
+
+end
+
+get "/poo3.html" do
+
+haml :poo3
+
+end
+
+get "/poo4.html" do
+
+haml :poo4
+
+end
+
+get "/poo5.html" do
+
+haml :poo5
+
+end
+
+get "/poo6.html" do
+
+haml :poo6
+
+end
+
+get "/poo7.html" do
+
+haml :poo7
+
+end
+
+
+
 
 
